@@ -22,4 +22,8 @@ export const Divider = styled.div`
 export const Title = styled.p`
   width: 100%;
   margin: 24px 0;
+export const Notifications = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
 `;
