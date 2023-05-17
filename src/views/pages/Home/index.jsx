@@ -8,6 +8,6 @@ export const Home = () => (
 
     <S.Divider />
 
-    <NotificationMessage message="Você não possui notificações recentes." />
+        <AlarmMessage message="Você não possui notificações recentes." />
   </S.Container>
 );

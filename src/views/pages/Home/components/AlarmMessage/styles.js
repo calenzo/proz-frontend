@@ -6,7 +6,7 @@ export const Container = styled.div`
   gap: 40px;
 `;
 
-export const ImageNotification = styled.img`
+export const ImageAlarm = styled.img`
   width: 64px;
   height: 64px;
 `;

@@ -1,1 +1,1 @@
-export { NotificationMessage } from "./NotificationMessage";
+export { AlarmMessage } from "./AlarmMessage";
