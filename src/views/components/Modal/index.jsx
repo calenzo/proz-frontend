@@ -12,7 +12,7 @@ export const Modal = ({
   if (!isOpen) return null;
 
   return (
-    <S.Container onClick={(event) => onClose(event)} isOpen={isOpen}>
+    <S.Container data-testid="modal" onClick={onClose} isOpen={isOpen}>
       <S.Children
         onClick={(event) => event.stopPropagation()}
         width={width}

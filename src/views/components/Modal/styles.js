@@ -4,7 +4,7 @@ export const Container = styled.div`
   width: 100%;
   height: unset;
   min-height: 100%;
-  background-color: ${({ background }) => background || "#00000080"};
+  background-color: #00000080;
   position: fixed;
   z-index: 999;
   top: 0;
