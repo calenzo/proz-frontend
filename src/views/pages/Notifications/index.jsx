@@ -40,8 +40,12 @@ export const Notifications = () => {
               hasBoxShadow
               hasActionRead
               hasActionExclude
-              handleOpenNotificationModal={handleOpenNotificationModal}
-              handleOpenExcludeNotification={handleOpenExcludeNotification}
+              handleOpenNotificationModal={() =>
+                handleOpenNotificationModal({ ...notification })
+              }
+              handleOpenExcludeNotification={() =>
+                handleOpenExcludeNotification({ ...notification })
+              }
               {...notification}
             />
           ))}

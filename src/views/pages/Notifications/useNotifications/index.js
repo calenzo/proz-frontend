@@ -28,10 +28,10 @@ export const useNotifications = () => {
     setNotificationModal({ isOpen: false, entityId: null });
   };
 
-  const handleOpenExcludeNotification = (entityId) => {
+  const handleOpenExcludeNotification = (notification) => {
     setExcludeModal({
       isOpen: true,
-      entityId,
+      entityId: notification.entityId,
     });
   };
 

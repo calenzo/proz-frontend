@@ -7,8 +7,8 @@ export const CardNotification = ({
   title,
   createdAt,
   describe,
-  handleOpenExcludeNotification = () => {},
-  handleOpenNotificationModal = () => {},
+  handleOpenExcludeNotification = null,
+  handleOpenNotificationModal = null,
   handleExit = false,
   hasActionRead = false,
   hasActionExclude = false,
@@ -20,9 +20,7 @@ export const CardNotification = ({
       <HeaderNotification
         title={title}
         createdAt={createdAt}
-        handleOpenExcludeNotification={() =>
-          handleOpenExcludeNotification(entityId)
-        }
+        handleOpenExcludeNotification={handleOpenExcludeNotification}
       />
 
       <S.Describe>{describe}</S.Describe>
