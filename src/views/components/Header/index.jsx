@@ -1,9 +1,11 @@
 import { Icons } from "views/assets";
 
+import { useHeader } from "./useHeader";
 
 import * as S from "./styles";
 
 export const Header = () => {
+  const { user, handleNotification } = useHeader();
 
   return (
     <S.HeaderContainer>
