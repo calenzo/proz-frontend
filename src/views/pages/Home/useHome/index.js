@@ -17,7 +17,15 @@ export const useHome = () => {
   const handleDeleteNotification = (entityId) => {
     setExcludeModal({ isOpen: true, entityId });
   };
+
+  const handleReadNotification = (entityId) => {};
+
+  return {
+    hasNotification,
     notifications,
     excludeModal,
     handleDeleteNotification,
+    handleReadNotification,
     handleCloseModal,
+  };
+};

@@ -11,14 +11,15 @@ export const Home = () => {
     notifications,
     excludeModal,
     handleDeleteNotification,
+    handleReadNotification,
     handleCloseModal,
   } = useHome();
 
   return (
-  <S.Container>
-    <S.Title>Notificações</S.Title>
+    <S.Container>
+      <S.Title>Notificações</S.Title>
 
-    <S.Divider />
+      <S.Divider />
 
       {!hasNotification && (
         <AlarmMessage message="Você não possui notificações recentes." />
@@ -28,6 +29,7 @@ export const Home = () => {
         <S.Notifications>
           {notifications?.map((notification) => (
             <CardNotification
+              handleReadNotification={handleReadNotification}
               handleDeleteNotification={handleDeleteNotification}
               {...notification}
             />
@@ -38,6 +40,6 @@ export const Home = () => {
         isOpen={excludeModal?.isOpen}
         onClose={() => handleCloseModal()}
       />
-  </S.Container>
-);
+    </S.Container>
+  );
 };
