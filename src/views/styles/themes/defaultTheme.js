@@ -11,5 +11,11 @@ export const Theme = {
     desktop_fullhd: "1600px",
   },
   fontSize: {},
-  colors: {},
+  colors: {
+    white_1: "#ffffff",
+    white_2: "#f5f5f5",
+    gray_1: "#d5d5d5",
+    purple_1: "#593493",
+    black_1: "#000000",
+  },
 };
