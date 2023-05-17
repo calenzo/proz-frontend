@@ -22,6 +22,13 @@ export const Divider = styled.div`
 export const Title = styled.p`
   width: 100%;
   margin: 24px 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 133.4%;
+  color: ${({ theme: { colors } }) => colors.black_1};
+`;
+
 export const Notifications = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
