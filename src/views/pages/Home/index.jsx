@@ -2,7 +2,7 @@ import { NotificationMessage } from "./components";
 
 import * as S from "./styles";
 
-export const Home = () => (
+    notifications,
   <S.Container>
     <S.Title>Notificações</S.Title>
 
