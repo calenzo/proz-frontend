@@ -1,7 +1,7 @@
-import { useLocation, useNavigate } from "react-router-dom";
-
 import { Button, HeaderNotification } from "views/components";
-import { Config } from "application/constant";
+
+import { useListNotifications } from "./useListNotifications";
+import { EmptyNotifications } from "..";
 
 import * as S from "./styles";
 
@@ -9,31 +9,26 @@ export const ListNotifications = ({
   notifications = [],
   onClose = () => {},
 }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { ROUTES } = Config;
-
-  const hasNotification = !!notifications.length;
-
-  if (!hasNotification) return null;
-
-  const isAvailableToVewMore = location.pathname !== `/${ROUTES.NOTIFICATIONS}`;
+  const { hasNotification, isAvailableToVewMore, redirectToNotifications } =
+    useListNotifications({ notifications });
 
   return (
     <S.Container onClick={(event) => onClose(event)}>
       <S.List>
-        {notifications.map((notification) => (
-          <HeaderNotification
-            title={notification.title}
-            createdAt={notification.createdAt}
-          />
-        ))}
+        {hasNotification &&
+          notifications?.map((notification) => (
+            <HeaderNotification
+              title={notification.title}
+              createdAt={notification.createdAt}
+            />
+          ))}
 
+        {!hasNotification && <EmptyNotifications />}
         <S.Divider />
 
         <Button
           disabled={!isAvailableToVewMore}
-          onClick={() => navigate(ROUTES.NOTIFICATIONS)}
+          onClick={() => redirectToNotifications()}
           variant="outline"
         >
           VER TODAS
