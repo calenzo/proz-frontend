@@ -50,9 +50,11 @@ export const useNotifications = () => {
     if (updatedData) return;
 
     getNotifications().then((transactions) => {
-      const values = transactions?.map((transaction) =>
-        convertNotificationToUse(transaction)
-      );
+      const values = transactions?.length
+        ? transactions?.map((transaction) =>
+            convertNotificationToUse(transaction)
+          )
+        : [];
 
       setNotifications(values);
       setUpdatedData(true);
