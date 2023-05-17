@@ -1,3 +1,5 @@
+import { ExcludeMessageModal } from "views/components";
+
 import { useHome } from "./useHome";
 import { AlarmMessage, CardNotification } from "./components";
 
@@ -7,6 +9,9 @@ export const Home = () => {
   const {
     hasNotification,
     notifications,
+    excludeModal,
+    handleDeleteNotification,
+    handleCloseModal,
   } = useHome();
 
   return (
@@ -23,11 +28,16 @@ export const Home = () => {
         <S.Notifications>
           {notifications?.map((notification) => (
             <CardNotification
+              handleDeleteNotification={handleDeleteNotification}
               {...notification}
             />
           ))}
         </S.Notifications>
       )}
+      <ExcludeMessageModal
+        isOpen={excludeModal?.isOpen}
+        onClose={() => handleCloseModal()}
+      />
   </S.Container>
 );
 };
