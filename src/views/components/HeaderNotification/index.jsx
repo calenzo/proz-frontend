@@ -8,14 +8,19 @@ export const HeaderNotification = ({
   createdAt,
   handleOpenExcludeNotification = null,
 }) => (
-  <S.Header>
+  <S.Header data-testid="header-notification">
     <S.ImageLetter src={Icons.Letter} alt="Imagem de carta" />
     <S.TitleContainer>
       <S.Title>Proz | {title}</S.Title>
       <S.SubTitle>{dateFormatter(createdAt, "dd/MM/yyyy - HH:mm")}</S.SubTitle>
     </S.TitleContainer>
     {typeof handleOpenExcludeNotification === "function" && (
-      <S.Close onClick={() => handleOpenExcludeNotification()}>X</S.Close>
+      <S.Close
+        data-testid="header-notification-exclude"
+        onClick={() => handleOpenExcludeNotification()}
+      >
+        X
+      </S.Close>
     )}
   </S.Header>
 );
