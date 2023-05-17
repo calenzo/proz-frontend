@@ -6,6 +6,7 @@ export const Modal = ({
   children,
   width,
   height,
+  padding,
   ...restProps
 }) => {
   if (!isOpen) return null;
@@ -16,6 +17,7 @@ export const Modal = ({
         onClick={(event) => event.stopPropagation()}
         width={width}
         height={height}
+        padding={padding}
         {...restProps}
       >
         {children}
