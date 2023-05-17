@@ -1,11 +1,18 @@
 import { Icons } from "views/assets";
 
 import { useHeader } from "./useHeader";
+import { ListNotifications } from "./components";
 
 import * as S from "./styles";
 
 export const Header = () => {
-  const { user, handleNotification } = useHeader();
+  const {
+    user,
+    notifications,
+    toggleList,
+    openList,
+    handleCloseListNotifications,
+  } = useHeader();
 
   return (
     <S.HeaderContainer>
@@ -15,7 +22,7 @@ export const Header = () => {
       </S.Menu>
 
       <S.Profile>
-        <S.Notification onClick={() => handleNotification()}>
+        <S.Notification onClick={() => toggleList()}>
           <S.ImageNotification
             src={Icons.NotificationOutline}
             alt="Imagem de notificação"
@@ -30,6 +37,13 @@ export const Header = () => {
           <S.Profession>{user.profession}</S.Profession>
         </S.ProfileAbout>
       </S.Profile>
+
+      {openList && (
+        <ListNotifications
+          notifications={notifications}
+          onClose={handleCloseListNotifications}
+        />
+      )}
     </S.HeaderContainer>
   );
 };

@@ -34,6 +34,7 @@ export const Profile = styled.div`
 
 export const Notification = styled.div`
   display: flex;
+  cursor: pointer;
 `;
 
 export const ImageNotification = styled.img`
