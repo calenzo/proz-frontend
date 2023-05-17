@@ -18,7 +18,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --silent",
+    "test:cov": "react-scripts test --collectCoverage --watchAll=false --silent -u",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
