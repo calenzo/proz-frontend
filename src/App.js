@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Theme } from "./views/styles/themes/defaultTheme";
 
-import { Home } from "./views/pages";
+import { Home, Notifications } from "./views/pages";
 
 import GlobalStyles from "./views/styles/globalStyles";
 
@@ -15,6 +15,7 @@ const App = () => (
     <BrowserRouter>
       <Routes>
         <Route path="/" exact element={<Home />} />
+        <Route path="/notifications" exact element={<Notifications />} />
       </Routes>
     </BrowserRouter>
   </ThemeProvider>
