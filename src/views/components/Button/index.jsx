@@ -9,9 +9,14 @@ export const Button = ({
   ...restProps
 }) => (
   <S.Container
+    data-testid="button"
     size={size}
     variant={variant}
-    onClick={onClick}
+    onClick={(event) => {
+      if (typeof onClick !== "function" || disabled) return;
+
+      onClick(event);
+    }}
     disabled={disabled}
     {...restProps}
   >
