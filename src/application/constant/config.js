@@ -8,7 +8,7 @@ const STAGE = {
     BASE_URL: "http://127.0.0.1:8000",
   },
   DEV: {
-    BASE_URL: "",
+    BASE_URL: "https://proz-api.onrender.com",
   },
 };
 
@@ -19,7 +19,7 @@ const Config = {
     DELETE_NOTIFICATION: (entityId) => `notification/${entityId}`,
     NOTIFICATIONS: "notifications",
   },
-  STAGE: STAGE[TYPE_STAGES.LOCAL],
+  STAGE: STAGE[TYPE_STAGES.DEV],
 };
 
 export { Config };
