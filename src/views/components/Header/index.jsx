@@ -11,14 +11,24 @@ export const Header = () => {
     notifications,
     toggleList,
     openList,
+    handleLogo,
+    handleMenu,
     handleCloseListNotifications,
   } = useHeader();
 
   return (
     <S.HeaderContainer>
       <S.Menu>
-        <S.ImageMenu src={Icons.Menu} alt="Imagem do menu" />
-        <S.ImageLogo src={Icons.Logo} alt="Imagem da logo" />
+        <S.ImageMenu
+          src={Icons.Menu}
+          alt="Imagem do menu"
+          onClick={() => handleMenu()}
+        />
+        <S.ImageLogo
+          src={Icons.Logo}
+          alt="Imagem da logo"
+          onClick={() => handleLogo()}
+        />
       </S.Menu>
 
       <S.Profile>

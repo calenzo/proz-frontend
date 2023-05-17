@@ -31,19 +31,26 @@ export const useHeader = () => {
     getNotifications().then((transactions) => {
       const values =
         transactions?.map((transaction) =>
-        convertNotificationToUse(transaction)
+          convertNotificationToUse(transaction)
         ) || [];
 
       setNotifications(values?.slice(0, 3));
     });
   }, [openList]);
 
+  const handleLogo = () => {
+    navigate("/");
+  };
+
+  const handleMenu = () => {};
 
   return {
     user,
     notifications,
     toggleList,
     openList,
+    handleLogo,
+    handleMenu,
     handleCloseListNotifications,
   };
 };

@@ -19,11 +19,13 @@ export const Menu = styled.div`
 export const ImageMenu = styled.img`
   width: 24px;
   height: 24px;
+  cursor: not-allowed; // don't implemented
 `;
 
 export const ImageLogo = styled.img`
   width: 108px;
   height: 32px;
+  cursor: pointer;
 `;
 
 export const Profile = styled.div`
