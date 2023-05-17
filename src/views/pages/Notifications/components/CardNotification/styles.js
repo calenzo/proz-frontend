@@ -1,12 +1,24 @@
-import { styled } from "styled-components";
+import { css, styled } from "styled-components";
 
 import { Button as ButtonComponent } from "views/components";
 
 export const Container = styled.div`
   width: 100%;
 
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12);
+  ${({ hasBoxShadow }) =>
+    hasBoxShadow &&
+    css`
+      box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+        0px 4px 5px rgba(0, 0, 0, 0.14), 0px 1px 10px rgba(0, 0, 0, 0.12);
+    `}
+
+  ${({ isRead }) =>
+    isRead !== "invalid" &&
+    css`
+      border-bottom: ${({ isRead, theme: { colors } }) =>
+        isRead ? "none" : `2px solid ${colors.orange_1}`};
+    `}
+
   border-radius: 8px;
 `;
 
@@ -52,6 +64,7 @@ export const Close = styled.p`
   min-height: 15px;
   color: ${({ theme: { colors } }) => colors.purple_1};
   cursor: pointer;
+  margin: 0 0 0 auto;
 `;
 
 export const Describe = styled(Title)`

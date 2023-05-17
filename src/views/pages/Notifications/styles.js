@@ -11,6 +11,14 @@ export const Container = styled(StructurePage)`
   align-items: center;
 `;
 
+export const Divider = styled.div`
+  width: 100%;
+  height: 1px;
+  opacity: 0.1;
+  background-color: ${({ theme: { colors } }) => colors.black_1};
+  margin-bottom: 40px;
+`;
+
 export const Title = styled.p`
   width: 100%;
   margin: 24px 0;
@@ -21,16 +29,8 @@ export const Title = styled.p`
   color: ${({ theme: { colors } }) => colors.black_1};
 `;
 
-export const Divider = styled.div`
-  width: 100%;
-  height: 1px;
-  opacity: 0.1;
-  background-color: ${({ theme: { colors } }) => colors.black_1};
-  margin-bottom: 40px;
-`;
-
-export const Describe = styled(Title)`
-  width: fit-content;
-  font-weight: 400;
-  font-size: 16px;
+export const Notifications = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 24px;
 `;
