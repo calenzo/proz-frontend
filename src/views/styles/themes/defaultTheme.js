@@ -17,5 +17,6 @@ export const Theme = {
     gray_1: "#d5d5d5",
     purple_1: "#593493",
     black_1: "#000000",
+    red_1: "#f44336",
   },
 };
