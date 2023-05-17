@@ -1,15 +1,25 @@
 import { Icons } from "views/assets";
+import { useNotificationsService } from "infrastructure/services";
 
 import { Modal, Button } from "..";
 
 import * as S from "./styles";
 
 export const ExcludeMessageModal = ({
+  entityId = null,
   isOpen = true,
   onClose = () => {},
+  callbackSuccess = () => {},
   ...restProps
 }) => {
-  const handleAction = () => {};
+  const { deleteNotification } = useNotificationsService();
+
+  const handleAction = () => {
+    deleteNotification(entityId).then(() => {
+      callbackSuccess();
+      onClose();
+    });
+  };
 
   const isAvailableToClose = true;
 
