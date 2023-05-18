@@ -1,4 +1,4 @@
-const { convertNotificationToUse } = require("../notification");
+import { convertNotificationToUse } from "..";
 
 describe("Infrastructure Handlers", () => {
   test("should convert all values", () => {
