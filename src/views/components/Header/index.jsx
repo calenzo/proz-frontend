@@ -17,17 +17,17 @@ export const Header = () => {
   } = useHeader();
 
   return (
-    <S.HeaderContainer>
+    <S.HeaderContainer data-testid="header">
       <S.Menu>
         <S.ImageMenu
           src={Icons.Menu}
           alt="Imagem do menu"
-          onClick={() => handleMenu()}
+          onClick={handleMenu}
         />
         <S.ImageLogo
           src={Icons.Logo}
           alt="Imagem da logo"
-          onClick={() => handleLogo()}
+          onClick={handleLogo}
         />
       </S.Menu>
 

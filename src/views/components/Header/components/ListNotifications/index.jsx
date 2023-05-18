@@ -13,7 +13,10 @@ export const ListNotifications = ({
     useListNotifications({ notifications });
 
   return (
-    <S.Container onClick={(event) => onClose(event)}>
+    <S.Container
+      data-testid="list-notifications"
+      onClick={(event) => onClose(event)}
+    >
       <S.List>
         {hasNotification &&
           notifications?.map((notification) => (
@@ -28,7 +31,7 @@ export const ListNotifications = ({
 
         <Button
           disabled={!isAvailableToVewMore}
-          onClick={() => redirectToNotifications()}
+          onClick={redirectToNotifications}
           variant="outline"
         >
           VER TODAS
