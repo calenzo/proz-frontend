@@ -41,4 +41,10 @@ describe("Date formatter", () => {
 
     expect(formatedValue).toEqual("17/05/2023");
   });
+
+  it("should to formatter object date valid date to pattern dd/MMMM/YYYY.", () => {
+    const formatedValue = dateFormatter(dateMock.object);
+
+    expect(formatedValue).toEqual(resultFormatter.default);
+  });
 });

@@ -1,6 +1,7 @@
 const dateNow = new Date();
 
 export const dateMock = {
+  object: dateNow,
   iso: dateNow.toISOString(),
   hours: (dateNow.getHours() / 100).toFixed(2).toString().slice(2),
   min: (dateNow.getMinutes() / 100).toFixed(2).toString().slice(2),
