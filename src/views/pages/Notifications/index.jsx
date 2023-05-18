@@ -23,7 +23,7 @@ export const Notifications = () => {
   } = useNotifications();
 
   return (
-    <S.Container>
+    <S.Container data-testid="notifications">
       <S.Title>Notificações</S.Title>
 
       <S.Divider />
