@@ -5,16 +5,11 @@ import { deleteService, getService, patchService } from "./api";
 const { ROUTES } = Config;
 
 export const useNotificationsService = () => ({
-  getNotifications: async () => {
-    const response = await getService(ROUTES.NOTIFICATIONS);
-    return response;
-  },
-  readNotification: async (entityId) => {
-    const response = await patchService(ROUTES.READ_NOTIFICATION(entityId));
-    return response;
-  },
-  deleteNotification: async (entityId) => {
-    const response = await deleteService(ROUTES.DELETE_NOTIFICATION(entityId));
-    return response;
-  },
+  getNotifications: async () => await getService(ROUTES.NOTIFICATIONS),
+
+  readNotification: async (entityId) =>
+    await patchService(ROUTES.READ_NOTIFICATION(entityId)),
+
+  deleteNotification: async (entityId) =>
+    await deleteService(ROUTES.DELETE_NOTIFICATION(entityId)),
 });
